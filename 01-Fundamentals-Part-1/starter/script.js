@@ -50,3 +50,24 @@ var job = 'programmer';
 job = 'teacher';
 ///////////////////////////////
 */
+/*
+///////////////////////////////
+//Basic Operators
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2010;
+console.log(ageJonas, ageSarah);
+
+console.log(ageJonas * 2, ageSarah / 2);
+
+const firstName = 'Jonas';
+const lastName = 'S';
+console.log(firstName + ' ' + lastName);
+
+let x = 10 + 5;
+x += 10;
+console.log(x);
+////////////////////////////////
+*/
+////////////////////////////////
+//
