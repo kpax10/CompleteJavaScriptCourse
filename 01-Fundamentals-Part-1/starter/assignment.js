@@ -48,3 +48,12 @@ if (population > 33000000) {
 // false
 // 1143
 ///////////////////////////////////
+// Equality Operators
+
+const numNeighbors = Number(prompt('How many neighbor countries does your country hav?'));
+
+if (numNeighbors === 1) {
+    console.log('Only 1 border');
+} else if (numNeighbors > 1) {
+    console.log('More than 1 border');
+} else console.log('No borders');
