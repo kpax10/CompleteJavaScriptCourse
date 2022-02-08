@@ -170,6 +170,7 @@ if (markBMI > johnBMI) {
 }
 /////////////////////////////
 */
+/*
 /////////////////////////////
 // Type Conversion and Coercion
 
@@ -188,3 +189,47 @@ console.log('23' - '10' - 3);
 let n = '1' + 1; // 11
 n = n - 1; // 11 - 1
 console.log(n);
+/////////////////////////////
+*/
+/*
+//Truthy and Falsy Values
+// 5 values: 0, '', undefined, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Jonas'));
+console.log(Boolean({}));
+
+const money = 0;
+if (money) {
+    console.log('dont spend it all')
+} else {
+    console.log('you should get a job')
+}
+
+let height;
+if (height) {
+    console.log('YAY height is defined');
+} else {
+    console.log('height is undefined');
+}
+///////////////////////////////
+*/
+/*
+///////////////////////////////
+//Equality Operator
+const age = 18;
+if (age === 18) console.log('you just became an adult');
+
+let favorite = Number(prompt('Whats your favorite number?'));
+console.log(favorite);
+
+if (favorite === 23) {
+    console.log('23 is a great number')
+} else if (favorite === 7) {
+    console.log('7 is also a cool number');
+} else {
+    console.log('Number is not 23 or 7');
+}
+/////////////////////////////////
+*/
