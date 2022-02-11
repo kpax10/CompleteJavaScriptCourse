@@ -296,3 +296,31 @@ TEST DATA:
 //     console.log('DRAW!');
 // } else console.log('NO ONE WINS!')
 ///////////////////////////////////
+///////////////////////////////////
+// Switch Statement
+
+// const day = 'wednesday';
+
+// switch (day) {
+//     case 'monday': //day === 'monday'
+//         console.log('Plan course structure');
+//         console.log('Go to coding meetup');
+//         break;
+//     case 'tuesday':
+//         console.log('prepare theory videos');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('write code examples');
+//         break;
+//     case 'friday':
+//         console.log('record videos');
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log('enjoy the weekend');
+//         break;
+//     default:
+//         console.log('not a valid day!')
+// }
+/////////////////////////////////////
