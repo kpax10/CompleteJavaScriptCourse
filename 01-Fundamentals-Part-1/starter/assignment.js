@@ -71,6 +71,7 @@
 //////////////////////////////////////
 //////////////////////////////////////
 // Switch Statement
+/*
 
 const language = 'mandarin';
 
@@ -94,3 +95,16 @@ switch (language) {
     default:
         console.log('great language too!')
 }
+*/
+//////////////////////////////////////
+//////////////////////////////////////
+//Conditional (Ternary) Operator
+/*
+const country = 'USA';
+const population = 13;
+
+population > 33 ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`);
+
+console.log(`${country}'s population is ${population > 33 ? 'above' : 'below'} average`);
+*/
+//////////////////////////////////////
