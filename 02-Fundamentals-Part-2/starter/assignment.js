@@ -45,6 +45,7 @@ const mexico = percentageOfWorld3(131);
 console.log(china, USA, mexico);
 //////////////////////////////
 */
+/*
 //////////////////////////////
 // Functions Calling Other Functions
 
@@ -61,3 +62,5 @@ const describePopulation = (country, population) => {
 describePopulation('China', 1441);
 describePopulation('USA', 350);
 describePopulation('Mexico', 131);
+*/
+//////////////////////////////
