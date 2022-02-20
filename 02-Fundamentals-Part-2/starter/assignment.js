@@ -63,4 +63,41 @@ describePopulation('China', 1441);
 describePopulation('USA', 350);
 describePopulation('Mexico', 131);
 */
+/*
+//////////////////////////////
+// Arrays
+
+const populations = [350, 120, 19, 7];
+console.log(populations.length === 4);
+function percentageOfWorld1(population) {
+    return (population / 7900) * 100;
+}
+
+const percentages = [
+    percentageOfWorld1(populations[0]),
+    percentageOfWorld1(populations[1]),
+    percentageOfWorld1(populations[2]),
+    percentageOfWorld1(populations[3])
+];
+
+console.log(percentages);
+//////////////////////////////
+*/
+/*
+//////////////////////////////
+// Array Methods
+
+const neighbors = ['USA', 'Mexico', 'Canada'];
+
+neighbors.push('Utopia');
+neighbors.pop('Utopia');
+
+if (!neighbors.includes('Germany')) {
+    console.log('Probably not a central European Country');
+}
+
+neighbors[neighbors.indexOf('Canada')] = 'Republic of Canada';
+console.log(neighbors);
+//////////////////////////////
+*/
 //////////////////////////////
