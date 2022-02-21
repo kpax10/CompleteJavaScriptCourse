@@ -241,5 +241,15 @@ const totals = [
 ]
 console.log(totals);
 */
+/*
 ////////////////////////////////
-// 
+// Objects
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'schmetman',
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+}
+////////////////////////////////
+*/
