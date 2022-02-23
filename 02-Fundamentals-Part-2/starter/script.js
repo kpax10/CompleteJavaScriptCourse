@@ -253,3 +253,78 @@ const jonas = {
 }
 ////////////////////////////////
 */
+/*
+// Dot vs. Bracket Notation
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtman',
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+}
+
+// console.log(jonas);
+
+// console.log(jonas.lastName);
+// console.log(jonas['lastName']);
+
+// const nameKey = 'Name';
+// console.log(jonas['first' + nameKey])
+// console.log(jonas['first' + nameKey])
+
+// const interestedIn = prompt('what value do you want returned?');
+// console.log(jonas[interestedIn]);
+
+// if (!jonas[interestedIn]) {
+//     console.log('This is not a valid property!');
+// }
+
+// jonas.location = 'Portugal';
+// jonas['twitter'] = ' @jonasSchmtmann';
+
+// Challenge
+// "Jonas has 3 friends, and his best friend is Michael"
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`);
+*/
+/*
+///////////////////////////////////
+// Object Methods
+
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtman',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
+
+    // calcAge: function () {
+    //     console.log(this);
+    //     return 2037 - this.birthYear;
+    // }
+
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()} year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} drivers license.`
+    }
+}
+
+console.log(jonas.calcAge());
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+// Challenge
+// Jonas is a 46 year old teacher, and he has a/no drivers license.
+
+console.log(jonas.getSummary());
+*/
+///////////////////////////////////

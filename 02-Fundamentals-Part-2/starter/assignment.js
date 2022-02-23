@@ -100,4 +100,60 @@ neighbors[neighbors.indexOf('Canada')] = 'Republic of Canada';
 console.log(neighbors);
 //////////////////////////////
 */
+/*
 //////////////////////////////
+// Introduction to Objects
+
+const myCountry = {
+    country: 'USA',
+    capital: 'Washington, D.C.',
+    language: 'English',
+    population: 350,
+    neighbors: ['Mexico', 'Canada']
+}
+console.log(myCountry)
+*/
+/*
+//////////////////////////////
+// Dot vs. Bracket Notation
+
+const myCountry = {
+    country: 'USA',
+    capital: 'Washington, D.C.',
+    language: 'English',
+    population: 350,
+    neighbors: ['Mexico', 'Canada']
+}
+
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language} speaking people, ${myCountry.neighbors.length} neighboring countries and a capital called ${myCountry.capital}`)
+
+myCountry.population = 352;
+console.log(myCountry.population)
+myCountry['population'] = 350;
+console.log(myCountry.population);
+/////////////////////////////////
+*/
+/*
+/////////////////////////////////
+// Object Methods
+
+const myCountry = {
+    country: 'USA',
+    capital: 'Washington, D.C.',
+    language: 'English',
+    population: 350,
+    neighbors: ['Mexico', 'Canada'],
+
+    describe: function () {
+        return `${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbors.length} neighboring countries and a capital called ${this.capital}.`
+    },
+    checkIsland: function () {
+        this.isIsland = this.neighbors.length === 0 ? true : false;
+    }
+}
+myCountry.describe();
+myCountry.checkIsland();
+console.log(myCountry);
+console.log(myCountry.isIsland);
+/////////////////////////////////
+*/
