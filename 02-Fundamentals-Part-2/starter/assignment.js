@@ -165,3 +165,5 @@ for (let voter = 1; voter <= 50; voter++) {
 }
 */
 /////////////////////////////////
+// Looping Arrays, Breaking, and Continuing
+
