@@ -182,4 +182,40 @@ for (let i = 0; i < populations.length; i++) {
 console.log(percentages2);
 //////////////////////////////////
 */
+// Looping Backwards and Loops in Loops
+/*
+const listOfNeighbors = [
+    ['Canada', 'Mexico'],
+    ['Spain'],
+    ['Norway', 'Sweden', 'Russia']
+];
 
+console.log(listOfNeighbors.length)
+
+for (let i = 0; i < listOfNeighbors.length; i++) {
+    // console.log(listOfNeighbors[neighbor])
+    for (let j = 0; j < listOfNeighbors[i].length; j++) {
+        console.log(listOfNeighbors[i][j])
+    }
+}
+*/
+/*
+///////////////////////////////
+// While Loops
+
+const populations = [350, 120, 19, 7];
+const percentages3 = [];
+function percentageOfWorld(population) {
+    return population / 7900 * 100;
+}
+
+let counter = 0;
+while (counter < populations.length) {
+    const perc = (percentageOfWorld(populations[counter]));
+    percentages3.push(perc);
+    counter++;
+}
+
+console.log(percentages3);
+*/
+//////////////////////////////////
