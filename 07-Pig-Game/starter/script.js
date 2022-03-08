@@ -18,8 +18,10 @@ score0DOM.textContent = 0;
 score1DOM.textContent = 0;
 diceDOM.classList.add('hidden');
 
+
 let currentScore = 0;
 let activePlayer = 0;
+let totalScore = [0, 0];
 
 // Rolling Dice Functionality
 
@@ -47,36 +49,30 @@ btnRoll.addEventListener('click', function () {
     }
 });
 
+// if user clicks hold, add current score to total score
+btnHold.addEventListener('click', function () {
+    console.log(totalScore);
 
+    // if active player is 0, add current score to totalScore[0]
+    if (activePlayer === 0) {
+        totalScore[0] += currentScore;
+    } else {
+        totalScore[1] += currentScore;
+    };
+    // update the score to the DOM
+    document.querySelector(`#score--${activePlayer}`).textContent = totalScore[activePlayer];
 
-// const p1CurrentDOM = document.querySelector('#current--0')
-// let p1Current = 0;
-// let roll;
+    document.querySelector(`#current--${activePlayer}`).textContent = 0;
+    currentScore = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    player0DOM.classList.toggle('player--active');
+    player1DOM.classList.toggle('player--active');
 
-// document.querySelector('.btn--roll').addEventListener('click', function () {
-//     const roll = Math.floor(Math.random() * 6) + 1;
-//     const imgDie = document.querySelector('img');
+});
 
-//     if (roll === 1) {
-//         imgDie.src = 'dice-1.png'
-//     } else if (roll === 2) {
-//         imgDie.src = 'dice-2.png'
-//     } else if (roll === 3) {
-//         imgDie.src = 'dice-3.png'
-//     } else if (roll === 4) {
-//         imgDie.src = 'dice-4.png'
-//     } else if (roll === 5) {
-//         imgDie.src = 'dice-5.png'
-//     } else {
-//         imgDie.src = 'dice-6.png'
-//     }
-//     return roll;
-// });
-
-
-// p1Current = 0;
-// p1Current += roll;
-// p1CurrentDOM.textContent = p1Current;
-
-// if not a 1, add the roll to the current score
-// if it is a 1, switch players
+// NOT WORKING YET
+if (totalScore[0] >= 30 || totalScore[1] >= 30) {
+    // put winning conditions here
+    console.log(`Player ${activePlayer} wins!`);
+};
+    // look in css file for winning class to add class
