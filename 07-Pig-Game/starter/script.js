@@ -1,6 +1,5 @@
 'use strict';
 
-// Selecting Elements
 const player0DOM = document.querySelector('.player--0')
 const player1DOM = document.querySelector('.player--1')
 const score0DOM = document.querySelector('#score--0');
@@ -12,7 +11,6 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-// Functions
 const resetCurrentAndDie = function () {
     score0DOM.textContent = 0;
     score1DOM.textContent = 0;
@@ -71,30 +69,22 @@ btnHold.addEventListener('click', function () {
     }
     // update the score to the DOM
     document.querySelector(`#score--${activePlayer}`).textContent = totalScore[activePlayer];
-
     document.querySelector(`#current--${activePlayer}`).textContent = 0;
     currentScore = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
     toggleBackground();
-
 });
 
 btnNew.addEventListener('click', function () {
-    // reset background for p0 and p1
     player0DOM.classList.remove('player--winner');
     player1DOM.classList.remove('player--winner');
     player0DOM.classList.add('player--active');
     player1DOM.classList.remove('player--active');
-    // reset scores and die
     totalScore = [0, 0];
     resetCurrentAndDie();
-    //re enable the roll dice and hold buttons
     disableBtns(false);
-    // reset currentScore for p0 and p1
     currentScore = 0;
     current0DOM.textContent = 0;
     current1DOM.textContent = 0;
-    // switch back to player 0 to start next game
     activePlayer = activePlayer === 1 ? 0 : 0;
-
 })
