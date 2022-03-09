@@ -12,12 +12,23 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-
+// Functions
+const resetCurrentAndDie = function () {
+    score0DOM.textContent = 0;
+    score1DOM.textContent = 0;
+    diceDOM.classList.add('hidden');
+}
+const disableBtns = function (bool) {
+    btnHold.disabled = bool;
+    btnRoll.disabled = bool;
+}
+const toggleBackground = function () {
+    player0DOM.classList.toggle('player--active');
+    player1DOM.classList.toggle('player--active');
+}
 // Reset scores and die
-score0DOM.textContent = 0;
-score1DOM.textContent = 0;
-diceDOM.classList.add('hidden');
 
+resetCurrentAndDie();
 
 let currentScore = 0;
 let activePlayer = 0;
@@ -44,33 +55,20 @@ btnRoll.addEventListener('click', function () {
         document.querySelector(`#current--${activePlayer}`).textContent = 0;
         currentScore = 0;
         activePlayer = activePlayer === 0 ? 1 : 0;
-        player0DOM.classList.toggle('player--active');
-        player1DOM.classList.toggle('player--active');
+        toggleBackground();
     }
 });
 
 // if user clicks hold, add current score to total score
 btnHold.addEventListener('click', function () {
-    console.log(totalScore);
-
     // if active player is 0, add current score to totalScore[0]
-    if (activePlayer === 0) {
-        totalScore[0] += currentScore;
-    } else {
-        totalScore[1] += currentScore;
-    };
-
+    activePlayer === 0 ? totalScore[0] += currentScore : totalScore[1] += currentScore;
     // game winning events
-    if (totalScore[activePlayer] >= 50) {
+    if (totalScore[activePlayer] >= 20) {
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
-        // remove the dice image on win
         diceDOM.classList.add('hidden');
-        // toggle losers background
-        player0DOM.classList.toggle('player--active');
-        player1DOM.classList.toggle('player--active');
-        // disable roll dice and hold button
-        btnHold.disabled = true;
-        btnRoll.disabled = true;
+        toggleBackground();
+        disableBtns(true);
     }
     // update the score to the DOM
     document.querySelector(`#score--${activePlayer}`).textContent = totalScore[activePlayer];
@@ -78,11 +76,9 @@ btnHold.addEventListener('click', function () {
     document.querySelector(`#current--${activePlayer}`).textContent = 0;
     currentScore = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
-    player0DOM.classList.toggle('player--active');
-    player1DOM.classList.toggle('player--active');
+    toggleBackground();
 
 });
-
 
 btnNew.addEventListener('click', function () {
     // reset background for p0 and p1
@@ -90,16 +86,11 @@ btnNew.addEventListener('click', function () {
     player1DOM.classList.remove('player--winner');
     player0DOM.classList.add('player--active');
     player1DOM.classList.remove('player--active');
-    // reset player score for both p0 and p1
+    // reset scores and die
     totalScore = [0, 0];
-    score0DOM.textContent = 0;
-    score1DOM.textContent = 0;
-
-    //reset dice image
-    diceDOM.classList.add('hidden');
+    resetCurrentAndDie();
     //re enable the roll dice and hold buttons
-    btnHold.disabled = false;
-    btnRoll.disabled = false;
+    disableBtns(false);
     // reset currentScore for p0 and p1
     currentScore = 0;
     current0DOM.textContent = 0;
