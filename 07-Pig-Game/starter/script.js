@@ -62,8 +62,7 @@ btnRoll.addEventListener('click', function () {
 // if user clicks hold, add current score to total score
 btnHold.addEventListener('click', function () {
     // if active player is 0, add current score to totalScore[0]
-    activePlayer === 0 ? totalScore[0] += currentScore : totalScore[1] += currentScore;
-    // game winning events
+    totalScore[activePlayer] += currentScore;
     if (totalScore[activePlayer] >= 20) {
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
         diceDOM.classList.add('hidden');
