@@ -59,6 +59,19 @@ btnHold.addEventListener('click', function () {
     } else {
         totalScore[1] += currentScore;
     };
+
+    // game winning events
+    if (totalScore[activePlayer] >= 20) {
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+        // remove the dice image on win
+        diceDOM.classList.add('hidden');
+        // toggle losers background
+        player0DOM.classList.toggle('player--active');
+        player1DOM.classList.toggle('player--active');
+        // disable roll dice and hold button
+        btnHold.disabled = true;
+        btnRoll.disabled = true;
+    }
     // update the score to the DOM
     document.querySelector(`#score--${activePlayer}`).textContent = totalScore[activePlayer];
 
@@ -71,8 +84,9 @@ btnHold.addEventListener('click', function () {
 });
 
 // NOT WORKING YET
-if (totalScore[0] >= 30 || totalScore[1] >= 30) {
-    // put winning conditions here
-    console.log(`Player ${activePlayer} wins!`);
-};
+// if (totalScore[0] >= 30) {
+//     // put winning conditions here
+//     console.log('winner');
+//     // console.log(`Player ${activePlayer} wins!`);
+// };
     // look in css file for winning class to add class
