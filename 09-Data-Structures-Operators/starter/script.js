@@ -37,10 +37,49 @@ const restaurant = {
 
 	orderPasta: function (ing1, ing2, ing3) {
 		console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}.`);
-	}
+	},
 
+	orderPizza: function (mainIngredient, ...otherIngredients) {
+		console.log(mainIngredient);
+		console.log(otherIngredients);
+	}
 };
 
+// DESTRUCTURING
+// Rest operator with arrays
+const arr = [1, 2, ...[3, 4]];
+
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, ...others);
+
+const [pizza, , risotto, ...otherfood] = [
+	...restaurant.mainMenu,
+	...restaurant.starterMenu
+];
+console.log(pizza, risotto, otherfood);
+
+// Rest operator with objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+// FUNCTIONS
+const add = function (...numbers) {
+	let sum = 0;
+	for (let num of numbers) sum += num;
+	console.log(sum);
+};
+add(2, 3);
+add(2, 3, 5);
+add(2, 3, 5, 7, 4, 23, 5);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('pepperoni', 'cheese', 'ham', 'tomato sauce');
+restaurant.orderPizza('cheese');
+
+/*
+// Spread Operator
 const arr = [7, 8, 9];
 const arr2 = [1, 2, 3];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
@@ -85,7 +124,7 @@ console.log(newRestaurant);
 const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy);
-
+*/
 ////////////////////////////////////////////////
 // Destructuring Objects
 /*
