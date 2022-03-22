@@ -45,6 +45,60 @@ const restaurant = {
 	}
 };
 
+const rest1 = {
+	name: 'Capri',
+	// numGuests: 20,
+	numGuests: 0,
+};
+
+const rest2 = {
+	name: 'La Piazza',
+	owner: 'Giovanni Rossi',
+};
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+rest1.numGuests ??= 10;
+rest2.numGuests ||= 10;
+
+
+/*
+//////////////////////////////////////
+// Nullish Coalescing Operator
+restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
+/*
+console.log(`----- OR-----`);
+// Use ANY data type, return ANY data type, short circuiting
+console.log(3 || 'jonas'); // 3
+console.log('' || 'jonas'); // jonas
+console.log(true || 0); // true
+console.log(undefined || null); // null
+console.log(undefined || '' || 'hello' || 23 || null); // hello
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log(`----- AND-----`);
+console.log(0 && 'jonas');// 0
+console.log(7 && 'jonas');// jonas
+console.log('hello' && 23 && null && 'jonas');// null
+
+if (restaurant.orderPizza) {
+	restaurant.orderPizza('mushrooms', 'spinach')
+}
+restaurant.orderPizza && restaurant.orderPizza('pepperoni', 'cheese');
+*/
+/*
 // DESTRUCTURING
 // Rest operator with arrays
 const arr = [1, 2, ...[3, 4]];
@@ -77,7 +131,7 @@ add(...x);
 
 restaurant.orderPizza('pepperoni', 'cheese', 'ham', 'tomato sauce');
 restaurant.orderPizza('cheese');
-
+*/
 /*
 // Spread Operator
 const arr = [7, 8, 9];
@@ -136,7 +190,7 @@ restaurant.orderDelivery({
 })
 
 const { name, openingHours, categories } = restaurant;
-console.log(name, categories);
+console.log(name, openingHours, categories);
 
 const {
 	name: restaurantName,
