@@ -45,6 +45,79 @@ const restaurant = {
 	}
 };
 
+
+
+/*
+///////////////////////////////////
+// For Of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu]
+console.log(menu);
+
+for (const item of menu.entries()) {
+	console.log(`${item[0] + 1}: ${item[1]}`);
+}
+*/
+////////////////////////////////////////
+/*
+//Coding Challenge #1
+const game = {
+	team1: 'Bayern Munich',
+	team2: 'Borrussia Dortmund',
+	players: [
+		[
+			'Neuer',
+			'Pavard',
+			'Martinez',
+			'Alaba',
+			'Davies',
+			'Kimmich',
+			'Goretzka',
+			'Coman',
+			'Muller',
+			'Gnarby',
+			'Lewandowski',
+		],
+		[
+			'Burki',
+			'Schulz',
+			'Hummels',
+			'Akanji',
+			'Hakimi',
+			'Weigl',
+			'Witsel',
+			'Hazard',
+			'Brandt',
+			'Sancho',
+			'Gotze',
+		],
+	],
+	score: '4:0',
+	scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+		'Hummels'],
+	date: 'Nov 9th, 2037',
+	odds: {
+		team1: 1.33,
+		x: 3.25,
+		team2: 6.5,
+	},
+};
+
+const [players1, players2] = game.players;
+const [gk, ...fieldPlayers] = players1;
+const allPlayers = [...players1, ...players2];
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic']
+
+const { team1, x: draw, team2 } = game.odds;
+
+const printGoals = function (...player) {
+	console.log(`${player}. Goals scored: ${player.length}`)
+};
+printGoals(...game.scored);
+
+team1 < team2 && console.log('Team 1 is more likely to win');
+team1 > team2 && console.log('Team 2 is more likely to win');
+*/
+/*
 const rest1 = {
 	name: 'Capri',
 	// numGuests: 20,
@@ -55,18 +128,27 @@ const rest2 = {
 	name: 'La Piazza',
 	owner: 'Giovanni Rossi',
 };
-
+*/
+/*
+// Or assignment operator
 // rest1.numGuests = rest1.numGuests || 10;
 // rest2.numGuests = rest2.numGuests || 10;
 
-// Nullish Assignment Operator
+// Nullish Assignment Operator (null or undefined)
 rest1.numGuests ??= 10;
 rest2.numGuests ??= 10;
 
 console.log(rest1);
 console.log(rest2);
 
+// if (rest2.owner) {
+// 	rest2.owner = 'anonymous'
+// }
 
+// rest2.owner = rest2.owner && 'anonymous';
+rest2.owner &&= 'anonymous'
+console.log(rest2.owner);
+*/
 /*
 //////////////////////////////////////
 // Nullish Coalescing Operator
